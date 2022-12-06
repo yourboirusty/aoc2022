@@ -12,7 +12,7 @@ fn solve() {
 
 fn find_start(packet: &Vec<char>, size: usize) {
     let mut cnt = 0;
-    let mut window: HashSet<char, RandomState>;
+    let mut window: HashSet<char>;
     for marker in packet.windows(size) {
         window = HashSet::from_iter(marker.iter().map(|l| l.to_owned()).clone());
         if window.len() == size {
